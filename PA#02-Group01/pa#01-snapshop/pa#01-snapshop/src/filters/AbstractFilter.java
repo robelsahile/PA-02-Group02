@@ -51,9 +51,14 @@ public abstract class AbstractFilter implements Filter {
       // myDescription = name.substring(dot + 1, name.length());
       // }
    
-      // REFACTORED CODE using inline variable
-      // Changed the if block with used to assign to variable to an inline statement
-      // Surafel Seboka #3
+      // Surafel seboka #6
+      // using extract method
+      myFilterDescription(name, dot);
+   }
+   // REFACTORED CODE using inline variable
+   // Changed the if block with used to assign to variable to an inline statement
+   // Surafel Seboka #3
+   private void myFilterDescription(String name, int dot) {
       myFilterDescription = (dot >= 0 && name.endsWith(FILTER_SUFFIX))
                                      ? name.substring(dot + 1,
                                                       name.length()
