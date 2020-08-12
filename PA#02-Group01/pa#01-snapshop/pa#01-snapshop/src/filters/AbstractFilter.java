@@ -259,8 +259,13 @@ public abstract class AbstractFilter implements Filter {
     */
    protected void swap(final Pixel[][] theData, final int row1, final int col1,
                        final int row2, final int col2) {
-      final Pixel temp = theData[row1][col1];
-      theData[row1][col1] = theData[row2][col2];
+      theData(theData, theData[row1], col1, row2, col2);
+   }
+ // Surafel seboka #7
+   // using method extract
+   private void theData(Pixel[][] theData, Pixel[] theDatum, int col1, int row2, int col2) {
+      final Pixel temp = theDatum[col1];
+      theDatum[col1] = theData[row2][col2];
       theData[row2][col2] = temp;
    }
 }
