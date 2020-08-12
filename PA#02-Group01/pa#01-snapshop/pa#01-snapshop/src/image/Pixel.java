@@ -105,8 +105,13 @@ public class Pixel {
      * @exception IllegalArgumentException if the specified value is less than
      *                MIN_COLOR_VALUE or greater than MAX_COLOR_VALUE.
      */
+
+     // Surafel seboka
+    // using inline variable #8
     public void setRed(final int theRed) throws IllegalArgumentException {
-        checkColorValue(theRed);
+        if (theRed < MIN_COLOR_VALUE || theRed > MAX_COLOR_VALUE) {
+            throw new IllegalArgumentException("Invalid color value: " + theRed);
+        }
         myRed = theRed;
     }
 
@@ -117,8 +122,12 @@ public class Pixel {
      * @exception IllegalArgumentException if the specified value is less than
      *                MIN_COLOR_VALUE or greater than MAX_COLOR_VALUE.
      */
+    // Surafel seboka
+    // using inline variable #9
     public void setGreen(final int theGreen) throws IllegalArgumentException {
-        checkColorValue(theGreen);
+        if (theGreen < MIN_COLOR_VALUE || theGreen > MAX_COLOR_VALUE) {
+            throw new IllegalArgumentException("Invalid color value: " + theGreen);
+        }
         myGreen = theGreen;
     }
 
@@ -129,22 +138,13 @@ public class Pixel {
      * @exception IllegalArgumentException if the specified value is less than
      *                MIN_COLOR_VALUE or greater than MAX_COLOR_VALUE.
      */
+    // Surafel seboka
+    // using inline variable #10
     public void setBlue(final int theBlue) throws IllegalArgumentException {
-        checkColorValue(theBlue);
+        if (theBlue < MIN_COLOR_VALUE || theBlue > MAX_COLOR_VALUE) {
+            throw new IllegalArgumentException("Invalid color value: " + theBlue);
+        }
         myBlue = theBlue;
     }
 
-    /**
-     * Checks to see if the specified color value is valid.
-     * 
-     * @param theValue The value.
-     * @exception IllegalArgumentException if the specified value is less than
-     *                MIN_COLOR_VALUE or greater than MAX_COLOR_VALUE.
-     */
-    
-    private void checkColorValue(final int theValue) throws IllegalArgumentException {
-        if (theValue < MIN_COLOR_VALUE || theValue > MAX_COLOR_VALUE) {
-            throw new IllegalArgumentException("Invalid color value: " + theValue);
-        }
-    }
 }
