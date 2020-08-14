@@ -40,8 +40,8 @@ public class FlipVerticalFilter extends AbstractFilter {
         filterModifier(theImage,data);
     }
     //@author Timmy Roma
-    private void filterModifier(final PixelImage theImage, final Pixel[][] data)
+    private void filterModifier(final PixelImage theImage, final Pixel[][] theData)
     {
-    	theImage.setPixelData(data);
+    	theImage.setPixelData(theData);
     }
 }

@@ -141,27 +141,10 @@ public class SnapShopGUI {
         myFrame = new JFrame();
         myImageLabel = new JLabel();
         
-        // image will align left if I do nothing...
-        /*
-         * later in this code myImageLabel is added directly to the Center region
-         * of a JFrame.
-         * 
-         * Q) What if I do no alignment and just add the label on a panel
-         * and then add the panel to the frame?
-         * A) aligns center horizontally, but to top vertically.
-         */
-        
-        // works on frame; top center on panel
+        //Timmy roma refactor #6 remove dead code. alot of unused code in this method.
         myImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
         myImageLabel.setVerticalAlignment(SwingConstants.CENTER);
         
-        // aligns left on Frame; aligns top center on panel
-//        myImageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-//        myImageLabel.setAlignmentY(Component.CENTER_ALIGNMENT);
-        
-        // aligns left on Frame; top center on panel
-//        myImageLabel.setAlignmentX(SwingConstants.CENTER);
-//        myImageLabel.setAlignmentY(SwingConstants.CENTER);
 
         myOpenButton = new JButton("Open...");
         mySaveButton = new JButton("Save As...");
@@ -325,8 +308,9 @@ public class SnapShopGUI {
             }
 
             myPixelImage.save(selectedFile);
-        } catch (final IOException ex) {
-            JOptionPane.showMessageDialog(myFrame, ex.getMessage());
+            //timmy roma refactor #7 change variable name
+        } catch (final IOException theException) {
+            JOptionPane.showMessageDialog(myFrame, theException.getMessage());
         }
     }
 

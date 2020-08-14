@@ -14,7 +14,8 @@ package image;
  */
 public class Pixel {
     // Static Fields
-
+	//timmy roma refactor #8 change value to reference 
+	public static final String errorMessage = "Invalid color value: "; 
     /**
      * The number of color channels.
      */
@@ -110,7 +111,8 @@ public class Pixel {
     // using inline variable #8
     public void setRed(final int theRed) throws IllegalArgumentException {
         if (theRed < MIN_COLOR_VALUE || theRed > MAX_COLOR_VALUE) {
-            throw new IllegalArgumentException("Invalid color value: " + theRed);
+        	//timmy roma refactor #8
+            throw new IllegalArgumentException(errorMessage + theRed);
         }
         myRed = theRed;
     }
@@ -126,7 +128,8 @@ public class Pixel {
     // using inline variable #9
     public void setGreen(final int theGreen) throws IllegalArgumentException {
         if (theGreen < MIN_COLOR_VALUE || theGreen > MAX_COLOR_VALUE) {
-            throw new IllegalArgumentException("Invalid color value: " + theGreen);
+        	//timmy roma refactor #8
+            throw new IllegalArgumentException(errorMessage + theGreen);
         }
         myGreen = theGreen;
     }
@@ -142,7 +145,8 @@ public class Pixel {
     // using inline variable #10
     public void setBlue(final int theBlue) throws IllegalArgumentException {
         if (theBlue < MIN_COLOR_VALUE || theBlue > MAX_COLOR_VALUE) {
-            throw new IllegalArgumentException("Invalid color value: " + theBlue);
+        	//timmy roma refactor #8
+            throw new IllegalArgumentException(errorMessage + theBlue);
         }
         myBlue = theBlue;
     }
